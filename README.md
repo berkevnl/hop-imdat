@@ -1,9 +1,13 @@
 # hop-imdat
 
+![HOP-İMDAT](assets/imdat.png)
+
 > **HOP-İMDAT** — İnsan Müdahale Devri Aktarım Tetikleyicisi
 > Sıkışan AI ajanları için insan-döngülü kurtarma protokolü.
 
 Samsun Üniversitesi Yazılım Mühendisliği 2. sınıf **Programlama 2** dersi öğrencilerinin **"Which Language?"** araştırma projesi kapsamındaki dönemlik mini-projelerini topladığı paylaşımlı çalışma alanı.
+
+![Proje Yapısı](assets/outline.png)
 
 ## Hızlı Başlangıç
 
