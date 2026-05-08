@@ -1,0 +1,52 @@
+name: Validate Submission
+
+on:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate submission folder
+        run: |
+          set -e
+          BASE="${{ github.event.pull_request.base.sha }}"
+          HEAD="${{ github.event.pull_request.head.sha }}"
+          CHANGED=$(git diff --name-only "$BASE" "$HEAD")
+
+          if [ -z "$CHANGED" ]; then
+            echo "Değişiklik yok."
+            exit 0
+          fi
+
+          # 1. Tüm değişiklikler submissions/ altında olmalı
+          OUTSIDE=$(echo "$CHANGED" | grep -v '^submissions/' || true)
+          if [ -n "$OUTSIDE" ]; then
+            echo "::error::PR submissions/ dışında dosya değiştiriyor:"
+            echo "$OUTSIDE"
+            exit 1
+          fi
+
+          # 2. Sadece TEK bir submission klasörü değişmeli
+          FOLDERS=$(echo "$CHANGED" | awk -F/ '{print $2}' | sort -u)
+          COUNT=$(echo "$FOLDERS" | wc -l)
+          if [ "$COUNT" -ne 1 ]; then
+            echo "::error::PR sadece TEK bir submission klasörünü değiştirmeli. Bulunan:"
+            echo "$FOLDERS"
+            exit 1
+          fi
+
+          # 3. Klasör adı pattern'e uymalı
+          FOLDER=$(echo "$FOLDERS" | head -n1)
+          if ! echo "$FOLDER" | grep -qE '^[a-z]+-[a-z]+-[0-9]+-[a-z][a-z0-9-]*$'; then
+            echo "::error::Geçersiz klasör adı: '$FOLDER'"
+            echo "Beklenen format: <ad>-<soyad>-<numara>-<proje-kisa-ad>"
+            echo "Örnek: ahmet-yilmaz-200110123-mini-todo"
+            exit 1
+          fi
+
+          echo "✓ Submission klasörü geçerli: $FOLDER"
