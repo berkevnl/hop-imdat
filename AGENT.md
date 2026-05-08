@@ -1,4 +1,4 @@
-# HOOP-İMDAT — Repository Agent Instructions
+# HOP-İMDAT — Repository Agent Instructions
 
 > İnsan Müdahale Devri Aktarım Tetikleyicisi
 > Sıkışan AI ajanları için insan-döngülü kurtarma protokolü.
@@ -8,6 +8,8 @@
 Samsun Üniversitesi Yazılım Mühendisliği 2. sınıf **Programlama 2** dersi öğrencilerinin **"Which Language?"** araştırma projesi kapsamındaki dönemlik mini-projelerini topladığı paylaşımlı çalışma alanı.
 
 Her öğrenci kürate edilmiş bir mini-proje şablonu seçer (mini-todo, mini-notes, mini-contacts vb.) ve **specification-first** yaklaşımla `v0` (Hafta 5) → `v6` (Hafta 13–14) artımlı sürümler halinde geliştirir.
+
+> **📌 Proje fikir dokümanı, ödev detayları ve senaryo kataloğu için bkz. [IDEA.md](IDEA.md)**
 
 ## Gönderim Düzeni
 
@@ -60,7 +62,7 @@ submissions/ahmet-200110123-mini-todo/          ← soyad eksik
 3. `submissions/` altında yukarıdaki kurallara uygun **kendi klasörünü oluştur**.
 4. Dosyalarını ekle. **Kendi klasörün dışındaki hiçbir dosyayı değiştirme.**
 5. Forkuna **commit + push**.
-6. `seyyah/hoop-imdat:main`'e **Pull Request** aç.
+6. `seyyah/hop-imdat:main`'e **Pull Request** aç.
 
 PR başlık formatı:
 ```
