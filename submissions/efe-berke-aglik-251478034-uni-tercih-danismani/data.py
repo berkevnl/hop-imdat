@@ -1,0 +1,35 @@
+data = {
+    # Selamlama & Genel
+    "merhaba": "Merhaba, sana nasıl yardımcı olabilirim?",
+    "nasılsın": "İyiyim, teşekkürler! Sen nasılsın?",
+    "iyiyim": "İyi olmana sevindim! Bugün ne planlıyorsun?",
+    "teşekkürler": "Rica ederim! Başka yardımcı olabileceğim bir şey var mı?",
+    "görüşürüz": "Görüşmek üzere! Başarılar dilerim.",
+
+    # YKS & Sınav
+    "yks açıklandı": "O halde YKS sonucunu benimle paylaş ve tercih listeni planlayalım.",
+    "yks nedir": "YKS, Türkiye'deki üniversite giriş sınavıdır. TYT ve AYT olmak üzere iki aşamadan oluşur.",
+    "tyt nedir": "TYT, Temel Yeterlilik Testi'dir. Türkçe, Matematik, Fen ve Sosyal içerikli sorulardan oluşur.",
+    "ayt nedir": "AYT, Alan Yeterlilik Testi'dir. Tercih ettiğin alana göre Sayısal, Sözel veya Eşit Ağırlık testlerini içerir.",
+    "sınavım kötü gitti": "Üzülme, her yıl yeni bir fırsat var. Hangi alanda eksik hissettin?",
+
+    # Sıralama & Tercih
+    "sıralamam": "Bu yıl için harika bir sıralama! Hangi alana ilgi duyuyorsun?",
+    "kaç puan aldım": "Puanını benimle paylaşırsan hangi bölümlere yerleşebileceğini birlikte değerlendirebiliriz.",
+    "tercih yapmak istiyorum": "Harika! Hangi alanda kariyer yapmak istiyorsun? Sayısal, sözel ya da eşit ağırlık?",
+    "kaç tercih yapabilirim": "YKS'de 24 tercih hakkın bulunuyor. Bunları stratejik kullanmak önemli.",
+
+    # Bölümler
+    "yazılım": "Yazılım, 2026 yılı için oldukça mantıklı bir seçim. Hangi şehirde yaşıyorsun?",
+    "bilgisayar mühendisliği": "Bilgisayar Mühendisliği, yazılım sektöründe en çok tercih edilen bölümlerden biri. Sıralaman kaç?",
+    "tıp": "Tıp fakültesi için genellikle ilk 10.000'e girmen gerekiyor. Sıralaman bu aralıkta mı?",
+    "hukuk": "Hukuk bölümleri sözel puan türüyle yerleştirilir. Sıralaman ve puanın nedir?",
+    "psikoloji": "Psikoloji bölümleri son yıllarda oldukça popüler. Eşit ağırlık puanı ile başvurulur.",
+
+    # Şehir & Üniversite
+    "zonguldak": "İstersen Zonguldak'a yakın, sıralaman ile örtüşen üniversiteleri araştırıp listeleyebilirim.",
+    "istanbul": "İstanbul'da hem devlet hem vakıf üniversitesi seçenekleri oldukça fazla. Bütçen var mı?",
+    "ankara": "Ankara'da ODTÜ, Hacettepe ve Ankara Üniversitesi güçlü tercihler arasında.",
+    "devlet mi vakıf mı": "Devlet üniversiteleri burslu seçenekler sunar. Vakıf üniversiteleri ise olanakları güçlüyse avantajlı olabilir.",
+    "burs var mı": "Birçok üniversitede %25, %50 ve %100 burslu kontenjanlar bulunuyor. Puanın belirleyici olacak.",
+}
