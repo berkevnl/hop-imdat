@@ -15,6 +15,16 @@ def levenshtein_mesafesi(mesaj, anahtar):
         levenshtein_mesafesi(mesaj[1:], anahtar[1:]) # değiştirme
     )
 
+# Verilen mesaja en yakın data anahtarını ve Levenshtein mesafesini döndürür
+def en_yakin_anahtari_bul(mesaj, anahtarlar):
+    en_yakin, minimum = None, 999
+    for anahtar in anahtarlar:
+        mesafe = levenshtein_mesafesi(mesaj, anahtar)
+        if mesafe < minimum:
+            minimum = mesafe
+            en_yakin = anahtar
+    return en_yakin, minimum
+
 # Socket oluşturma
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -24,15 +34,10 @@ client_socket.connect(('localhost', 65432))
 # Uzman önerilerinin tekrardan aynı mesajın yazılabilme ihtimaline karşı kaydedileceği sözlük
 kayitli_mesajlar = {}
 
-# Ana döngü: öğrenci girdisini al, en yakın anahtarı bul, uygun yanıtı ver
+# Ana döngü: öğrenci girdisini al, uygun yanıtı ver
 while True:
-    minimum = 999
     mesaj = input("Öğrenci: ")
-    for anahtar in data.keys():  # data'daki tüm anahtarlarda dolaş
-        hata_payi = levenshtein_mesafesi(mesaj, anahtar)  # Levenshtein Mesafesini hesapla ve tut
-        if hata_payi < minimum:
-            minimum = hata_payi
-            mevcut_anahtar = anahtar
+    mevcut_anahtar, minimum = en_yakin_anahtari_bul(mesaj, data.keys())
     if minimum == 0:
         print(f"Bot: {data[mevcut_anahtar]}")
     elif minimum <= 3:
